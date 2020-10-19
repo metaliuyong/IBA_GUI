@@ -8,7 +8,7 @@ File::File(): path(""), dataVec({}){
     dataVec.reserve(2048);//通过reserve来避免realloc造成的开销
 }
 
-File::File(QString p): path(p), dataVec({}){
+File::File(const QString &p): path(p), dataVec({}){
     dataVec.reserve(2048);
 }
 
@@ -18,7 +18,7 @@ File::~File(){
 
 
 //打开一个目录获取其中所有的Spe文件对其进行trans_spe_to_txt操作
-bool File::trans_spe_to_txt_batch(QString dir){
+bool File::trans_spe_to_txt_batch(const QString &dir){
    QDirIterator it(dir, QDirIterator::Subdirectories);
    while(it.hasNext()){
        QString fi = it.next();
@@ -31,7 +31,7 @@ bool File::trans_spe_to_txt_batch(QString dir){
 
 
 //打开一个文件读取道数信息并且将其转换为txt文件.
-bool File::trans_spe_to_txt(QString f){
+bool File::trans_spe_to_txt(const QString &f){
     QFile rf(f);
     if(!rf.open(QIODevice::ReadOnly)){
         return false;
@@ -68,7 +68,7 @@ bool File::trans_spe_to_txt(QString f){
     return true;
 }
 
-bool File::plotSpectrum(QString f, QChart *chart){
+bool File::plotSpectrum(const QString &f, QChart *chart){
     this->dataVec.clear();//因为重新从文件中读取数据了，所以开始时要清零
     QFile rf(f);
     if(!rf.open(QIODevice::ReadOnly)){

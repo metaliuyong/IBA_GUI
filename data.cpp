@@ -4,7 +4,7 @@ Data::Data():channel(0), count(0){
 
 }
 
-Data::Data(int ch, int co):channel(ch), count(co){
+Data::Data(const int &ch, const int &co):channel(ch), count(co){
 
 }
 
@@ -16,9 +16,9 @@ int Data::getCount(){
     return count;
 }
 
-void Data::setChannel(int ch){
+void Data::setChannel(const int &ch){
     channel = ch;
 }
-void Data::setCount(int co){
+void Data::setCount(const int &co){
     count = co;
 }

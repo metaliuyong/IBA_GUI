@@ -8,11 +8,11 @@ private:
     int count;
 public:
     Data();
-    Data(int ch, int co);
+    Data(const int &ch, const int &co);
     int getChannel();
     int getCount();
-    void setChannel(int ch);
-    void setCount(int co);
+    void setChannel(const int &ch);
+    void setCount(const int &co);
 };
 
 #endif // DATA_H
