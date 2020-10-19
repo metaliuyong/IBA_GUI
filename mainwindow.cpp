@@ -175,7 +175,7 @@ MainWindow::MainWindow(QWidget *parent)
     label->setText("IBA解谱程序");
     statusbar->addWidget(label);
     statusbar->addWidget(new QLabel("UTF-8", this));
-    statusbar->addPermanentWidget(new QLabel("MacOs 10.16"));
+//    statusbar->addPermanentWidget(new QLabel("MacOs 10.16"));
 
     //核心控件，文本编辑区
 //    QTextEdit* textedit = new QTextEdit(this);
